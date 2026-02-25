@@ -37,7 +37,8 @@ public class L01 : MonoBehaviour
         {
             GameObject go = new("Square" + i);
             SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = CreateGround.CreateSolidColorSprite(Color.red);
+            sr.sprite = CreateGround.CreateSolidColorSprite();
+            sr.color = Color.blue;
             srs[i] = sr;
             go.transform.position = new Vector3(camPos.x - 7f + i * 1.5f, camPos.y, zPos);
             go.transform.localScale = Vector3.one;

@@ -4,7 +4,7 @@ public static class CreateGround
 {
 
 	// 生成 1x1 纯色 Sprite（世界尺寸通过 SpriteRenderer.size 控制）
-	public static Sprite CreateSolidColorSprite(Color color)
+	public static Sprite CreateSolidColorSprite()
 	{
 		Texture2D texture = new Texture2D(1, 1, TextureFormat.RGBA32, false)
 		{
@@ -12,7 +12,7 @@ public static class CreateGround
 			wrapMode = TextureWrapMode.Clamp
 		};
 
-		texture.SetPixel(0, 0, color);
+		texture.SetPixel(0, 0, Color.white);
 		texture.Apply();
 
 		return Sprite.Create(
@@ -25,7 +25,7 @@ public static class CreateGround
 		);
 	}
 
-	public static Sprite CreateCircleSprite(Color color, int diameter = 64)
+	public static Sprite CreateCircleSprite(int diameter = 64)
 	{
 		diameter = Mathf.Max(2, diameter);	//最小直径为2
 
@@ -51,7 +51,7 @@ public static class CreateGround
 				float dy = y - center.y;
 				float distSqr = dx * dx + dy * dy;
 
-				texture.SetPixel(x, y, distSqr <= radiusSqr ? color : transparent);
+				texture.SetPixel(x, y, distSqr <= radiusSqr ? Color.white : transparent);
 			}
 		}
 
@@ -85,7 +85,7 @@ public static class CreateGround
 
 		if (groundSprite == null)
 		{
-			groundSprite = CreateSolidColorSprite(Color.green);
+			groundSprite = CreateSolidColorSprite();
 		}
 
 		sp.sprite = groundSprite;
