@@ -25,6 +25,48 @@ public static class CreateGround
 		);
 	}
 
+	public static Sprite CreateCircleSprite(Color color, int diameter = 64)
+	{
+		diameter = Mathf.Max(2, diameter);	//最小直径为2
+
+
+		// 正方形多余部分会被透明色覆盖
+		Texture2D texture = new Texture2D(diameter, diameter, TextureFormat.RGBA32, false)
+		{
+			filterMode = FilterMode.Bilinear,
+			wrapMode = TextureWrapMode.Clamp
+		};
+
+		Color transparent = new Color(0f, 0f, 0f, 0f);
+		float radius = (diameter - 1) * 0.5f;
+		Vector2 center = new Vector2(radius, radius);
+		float radiusSqr = radius * radius;
+
+		// 遍历每个像素，判断是否在圆内
+		for (int y = 0; y < diameter; y++)
+		{
+			for (int x = 0; x < diameter; x++)
+			{
+				float dx = x - center.x;
+				float dy = y - center.y;
+				float distSqr = dx * dx + dy * dy;
+
+				texture.SetPixel(x, y, distSqr <= radiusSqr ? color : transparent);
+			}
+		}
+
+		texture.Apply();
+
+		return Sprite.Create(
+			texture,
+			new Rect(0f, 0f, diameter, diameter),
+			new Vector2(0.5f, 0.5f),
+			diameter,
+			0,
+			SpriteMeshType.FullRect
+		);
+	}
+
 	public static GameObject Build(
 		Camera cam,
 		Vector2 groundSize,
@@ -61,4 +103,5 @@ public static class CreateGround
 
 		return ground;
 	}
+
 }
