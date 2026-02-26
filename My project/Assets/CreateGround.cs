@@ -81,6 +81,16 @@ public static class CreateGround
 		}
 
 		GameObject ground = new GameObject("Ground");
+		//将地面对象设置为Ground层，以便射线检测
+		int groundLayer = LayerMask.NameToLayer("Ground");
+		if (groundLayer != -1)
+		{
+			ground.layer = groundLayer;
+		}
+		else
+		{
+			Debug.LogWarning("CreateGround: Layer 'Ground' not found.");
+		}
 		SpriteRenderer sp = ground.AddComponent<SpriteRenderer>();
 
 		if (groundSprite == null)
