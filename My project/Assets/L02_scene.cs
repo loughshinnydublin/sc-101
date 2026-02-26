@@ -27,6 +27,27 @@ public class L02 : MonoBehaviour
         sr = plank.GetComponent<SpriteRenderer>();
         sr.color = Color.yellow;
 
+        int platformLayer = LayerMask.NameToLayer("Platform");
+        if (platformLayer != -1)
+        {
+            plank.layer = platformLayer;
+        }
+        else
+        {
+            Debug.LogWarning("L02: Layer 'Platform' not found.");
+        }
+
+        BoxCollider2D plankCollider = plank.GetComponent<BoxCollider2D>();
+        if (plankCollider != null)
+        {
+            plankCollider.usedByEffector = true;
+        }
+
+        PlatformEffector2D platformEffector = plank.AddComponent<PlatformEffector2D>();
+        platformEffector.useOneWay = true;  //单向平台
+        platformEffector.surfaceArc = 170f; //允许站立的顶部角度
+        platformEffector.useOneWayGrouping = true;
+
 
         for (int i = 0; i < 3; i++)
         {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class L02_myController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class L02_myController : MonoBehaviour
     private float speed = 5f;
     private float jumpImpulse = 12f;    //跳跃冲量
     private float jumpCutFactor = 0.5f; //松开跳跃键时保留的向上速度比例（0~1）
+    private float dropThroughDuration = 0.01f;   //平台虚化时间
     private Rigidbody2D rb;
     private GameObject sq;
 
@@ -15,6 +17,8 @@ public class L02_myController : MonoBehaviour
     private int jumpCount = 0;
     private bool wasGrounded = true;
     private Collider2D col;
+    private LayerMask platformMask;
+    private bool isDropping;
 
     void Start()
     {
@@ -29,6 +33,7 @@ public class L02_myController : MonoBehaviour
         rb = sq.GetComponent<Rigidbody2D>();    //不在update调用getcomponent
         rb.gravityScale = 2f;
         col = sq.GetComponent<Collider2D>();
+        platformMask = LayerMask.GetMask("Platform");
     }
 
     void Update()
@@ -46,7 +51,12 @@ public class L02_myController : MonoBehaviour
         Vector3 origin = col.bounds.center + new Vector3(0f, -col.bounds.extents.y, 0f);
 
         //获取square底边的位置，使用collider
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, 1 << 6);   //第六层layermask
+        int groundMask = LayerMask.GetMask("Ground", "Platform");
+        if (isDropping)
+        {
+            groundMask = LayerMask.GetMask("Ground");
+        }
+        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, groundMask);
         Debug.DrawLine(origin, origin + Vector3.down * 0.1f);
         bool hitGround = hit.collider != null;  //是否击中地面
 
@@ -91,13 +101,67 @@ public class L02_myController : MonoBehaviour
     private void Jump()
     {
         Keyboard keyboard = Keyboard.current;
-        if (keyboard != null && keyboard.spaceKey.wasPressedThisFrame && jumpCount < 2)
+        if (keyboard == null || !keyboard.spaceKey.wasPressedThisFrame)
+        {
+            return;
+        }
+
+        bool pressDown = keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed;
+        if (pressDown && TryStartDropThrough())
+        {
+            return;
+        }
+
+        if (jumpCount < 2)
         {
             print("Jump!");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpImpulse, ForceMode2D.Impulse);
             jumpCount++;
         }
+    }
+
+    private bool TryStartDropThrough()
+    {
+        if (isDropping || platformMask == 0)
+        {
+            return false;
+        }
+
+        Vector2 feetCenter = new Vector2(col.bounds.center.x, col.bounds.min.y - 0.02f);
+        Vector2 checkSize = new Vector2(col.bounds.size.x * 0.9f, 0.05f);
+        Collider2D platformCollider = Physics2D.OverlapBox(feetCenter, checkSize, 0f, platformMask);
+
+        if (platformCollider == null)
+        {
+            return false;
+        }
+
+        StartCoroutine(DropThroughPlatform(platformCollider));
+        return true;
+    }
+
+    private IEnumerator DropThroughPlatform(Collider2D platformCollider)
+    {
+        isDropping = true;
+        Physics2D.IgnoreCollision(col, platformCollider, true);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Min(rb.linearVelocity.y, -2f));
+
+        yield return new WaitForSeconds(dropThroughDuration);
+
+
+        //等待玩家完全穿过平台：当玩家底部低于平台顶部时，结束忽略碰撞
+        while (platformCollider != null && col.bounds.min.y > platformCollider.bounds.max.y)
+        {
+            yield return null;
+        }
+
+        if (platformCollider != null)
+        {
+            Physics2D.IgnoreCollision(col, platformCollider, false);
+        }
+
+        isDropping = false;
     }
 
     private void HandleJumpCut()
