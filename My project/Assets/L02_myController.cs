@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 public class L02_myController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class L02_myController : MonoBehaviour
     private float jumpImpulse = 12f;    //跳跃冲量
     private float jumpCutFactor = 0.5f; //松开跳跃键时保留的向上速度比例（0~1）
     private float dropThroughDuration = 0.01f;   //平台虚化时间
+    private float maxDropIgnoreDuration = 0.35f; //忽略碰撞最大持续时间（兜底）
     private Rigidbody2D rb;
     private GameObject sq;
 
@@ -19,14 +21,23 @@ public class L02_myController : MonoBehaviour
     private Collider2D col;
     private LayerMask platformMask;
     private bool isDropping;
+    private Collider2D droppingPlatformCollider;
+    private Coroutine dropThroughCoroutine;
+
+    //编辑图片
+    [SerializeField] private Sprite sprite;
+
 
     void Start()
     {
         //sq为可操作方块
         sq = new("Square");
         SpriteRenderer sr = sq.AddComponent<SpriteRenderer>();
-        sr.sprite = CreateGround.CreateSolidColorSprite();
-        sr.color = Color.cyan;
+        // sr.sprite = CreateGround.CreateSolidColorSprite();
+        // sr.color = Color.cyan;
+
+        sr.sprite = sprite;
+
         sq.AddComponent<BoxCollider2D>();
         sq.AddComponent<Rigidbody2D>();
         sq.transform.position = new Vector3(-5f, 0f, 1f);
@@ -107,9 +118,15 @@ public class L02_myController : MonoBehaviour
         }
 
         bool pressDown = keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed;
-        if (pressDown && TryStartDropThrough())
+        if (pressDown && !isDropping && TryStartDropThrough())
         {
             return;
+        }
+
+        // 下落穿透中允许起跳：先立即恢复平台碰撞，再执行跳跃
+        if (isDropping)
+        {
+            EndDropThrough();
         }
 
         if (jumpCount < 2)
@@ -137,28 +154,50 @@ public class L02_myController : MonoBehaviour
             return false;
         }
 
-        StartCoroutine(DropThroughPlatform(platformCollider));
+        dropThroughCoroutine = StartCoroutine(DropThroughPlatform(platformCollider));
         return true;
     }
 
     private IEnumerator DropThroughPlatform(Collider2D platformCollider)
     {
         isDropping = true;
+        droppingPlatformCollider = platformCollider;
         Physics2D.IgnoreCollision(col, platformCollider, true);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Min(rb.linearVelocity.y, -2f));
 
         yield return new WaitForSeconds(dropThroughDuration);
 
+        float elapsed = 0f;
 
-        //等待玩家完全穿过平台：当玩家底部低于平台顶部时，结束忽略碰撞
-        while (platformCollider != null && col.bounds.min.y > platformCollider.bounds.max.y)
+        //等待玩家完全穿过平台：当玩家顶部低于平台底部时，结束忽略碰撞
+        while (platformCollider != null && col.bounds.max.y > platformCollider.bounds.min.y && elapsed < maxDropIgnoreDuration)
         {
+            elapsed += Time.deltaTime;
             yield return null;
         }
 
         if (platformCollider != null)
         {
             Physics2D.IgnoreCollision(col, platformCollider, false);
+        }
+
+        isDropping = false;
+        droppingPlatformCollider = null;
+        dropThroughCoroutine = null;
+    }
+
+    private void EndDropThrough()
+    {
+        if (dropThroughCoroutine != null)
+        {
+            StopCoroutine(dropThroughCoroutine);
+            dropThroughCoroutine = null;
+        }
+
+        if (droppingPlatformCollider != null)
+        {
+            Physics2D.IgnoreCollision(col, droppingPlatformCollider, false);
+            droppingPlatformCollider = null;
         }
 
         isDropping = false;

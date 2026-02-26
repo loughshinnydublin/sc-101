@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 5431a9e708e0b26418f23c8404ee11c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6404474351948593603
+    second: NPC3.digcomp_0
+  - first:
+      213: -3752551192697131926
+    second: NPC3.digcomp_1
+  - first:
+      213: 9123782348153301397
+    second: NPC3.digcomp_2
+  - first:
+      213: -8364074920550226115
+    second: NPC3.digcomp_3
+  - first:
+      213: 8955513037655082135
+    second: NPC3.digcomp_4
+  - first:
+      213: 426387138200220098
+    second: NPC3.digcomp_5
+  - first:
+      213: -1554977548394084752
+    second: NPC3.digcomp_6
+  - first:
+      213: 270285134059812549
+    second: NPC3.digcomp_7
+  - first:
+      213: 9173592794140662291
+    second: NPC3.digcomp_8
+  - first:
+      213: -4702466666434304513
+    second: NPC3.digcomp_9
+  - first:
+      213: 282031231245683178
+    second: NPC3.digcomp_10
+  - first:
+      213: 3263265211071211859
+    second: NPC3.digcomp_11
+  - first:
+      213: 3346592262427226115
+    second: NPC3.digcomp_12
+  - first:
+      213: -2125407574372255273
+    second: NPC3.digcomp_13
+  - first:
+      213: 951236444847313706
+    second: NPC3.digcomp_14
+  - first:
+      213: -790921652666484462
+    second: NPC3.digcomp_15
+  - first:
+      213: 1684836176946608575
+    second: NPC3.digcomp_16
+  - first:
+      213: -6935632101132024427
+    second: NPC3.digcomp_17
+  - first:
+      213: -575946628294139709
+    second: NPC3.digcomp_18
+  - first:
+      213: -2683709979341297082
+    second: NPC3.digcomp_19
+  - first:
+      213: 7054184966519805774
+    second: NPC3.digcomp_20
+  - first:
+      213: 7227851000987868411
+    second: NPC3.digcomp_21
+  - first:
+      213: -6822551210534553871
+    second: NPC3.digcomp_22
+  - first:
+      213: -2546950142239255990
+    second: NPC3.digcomp_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NPC3.digcomp_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 638
+        width: 92
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36010f528cbe17a0800000000000000
+      internalID: -6404474351948593603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_1
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 634
+        width: 48
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ca1d572924cebc0800000000000000
+      internalID: -3752551192697131926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_2
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 633
+        width: 52
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59928ada4bf2e9e70800000000000000
+      internalID: 9123782348153301397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_3
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 808
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37a9ddac26dceb80800000000000000
+      internalID: -8364074920550226115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_4
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 766
+        width: 87
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7948fcec8af584c70800000000000000
+      internalID: 8955513037655082135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_5
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 766
+        width: 38
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c13835d7d4dae500800000000000000
+      internalID: 426387138200220098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 767
+        width: 178
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076434a882c9b6ae0800000000000000
+      internalID: -1554977548394084752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_7
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 622
+        width: 74
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c634bbb5ee30c300800000000000000
+      internalID: 270285134059812549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_8
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 623
+        width: 74
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a56d0ea062f4f70800000000000000
+      internalID: 9173592794140662291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_9
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 627
+        width: 149
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5611b4b7b7dbeb0800000000000000
+      internalID: -4702466666434304513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_10
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 557
+        width: 198
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae907f919e9f9e300800000000000000
+      internalID: 282031231245683178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_11
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 557
+        width: 198
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3592ac18b62794d20800000000000000
+      internalID: 3263265211071211859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_12
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 605
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300bb028eeb717e20800000000000000
+      internalID: 3346592262427226115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 407
+        width: 73
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9fd9e62190182e0800000000000000
+      internalID: -2125407574372255273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_14
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 406
+        width: 64
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a239788b188733d00800000000000000
+      internalID: 951236444847313706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_15
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 555
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21936a782f41605f0800000000000000
+      internalID: -790921652666484462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 408
+        width: 84
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb931a7839db16710800000000000000
+      internalID: 1684836176946608575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_17
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 406
+        width: 175
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595ca3fb95fafbf90800000000000000
+      internalID: -6935632101132024427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_18
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 410
+        width: 173
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0a1f2d793d108f0800000000000000
+      internalID: -575946628294139709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_19
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 409
+        width: 155
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ae0312efb81cad0800000000000000
+      internalID: -2683709979341297082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_20
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 409
+        width: 160
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4750553adf75e160800000000000000
+      internalID: 7054184966519805774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_21
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 411
+        width: 185
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc555bc03c7e4460800000000000000
+      internalID: 7227851000987868411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_22
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 226
+        width: 114
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f63d2a42dd6151a0800000000000000
+      internalID: -6822551210534553871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC3.digcomp_23
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 226
+        width: 114
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42d237075a67acd0800000000000000
+      internalID: -2546950142239255990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NPC3.digcomp_0: -6404474351948593603
+      NPC3.digcomp_1: -3752551192697131926
+      NPC3.digcomp_10: 282031231245683178
+      NPC3.digcomp_11: 3263265211071211859
+      NPC3.digcomp_12: 3346592262427226115
+      NPC3.digcomp_13: -2125407574372255273
+      NPC3.digcomp_14: 951236444847313706
+      NPC3.digcomp_15: -790921652666484462
+      NPC3.digcomp_16: 1684836176946608575
+      NPC3.digcomp_17: -6935632101132024427
+      NPC3.digcomp_18: -575946628294139709
+      NPC3.digcomp_19: -2683709979341297082
+      NPC3.digcomp_2: 9123782348153301397
+      NPC3.digcomp_20: 7054184966519805774
+      NPC3.digcomp_21: 7227851000987868411
+      NPC3.digcomp_22: -6822551210534553871
+      NPC3.digcomp_23: -2546950142239255990
+      NPC3.digcomp_3: -8364074920550226115
+      NPC3.digcomp_4: 8955513037655082135
+      NPC3.digcomp_5: 426387138200220098
+      NPC3.digcomp_6: -1554977548394084752
+      NPC3.digcomp_7: 270285134059812549
+      NPC3.digcomp_8: 9173592794140662291
+      NPC3.digcomp_9: -4702466666434304513
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
